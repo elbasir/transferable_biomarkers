@@ -71,4 +71,4 @@ for gene in genecols:
 df = pd.DataFrame(cindex)
 df.columns = ['Gene_name', 'Drug_name', 'CI']
 #df.to_csv("CI_gene_drug_May_13.csv", index=False)
-df.to_csv("data/gene_drug_CIndex.csv", index=False)
+df.to_csv("output/gene_drug_CIndex.csv", index=False)
