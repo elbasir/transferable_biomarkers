@@ -6,7 +6,7 @@ np.random.seed(423)
 
 def extact_gene_name_exp():
     '''extracts the gene expression of the 200 driver genes'''
-    df = pd.read_csv("CCLE_expression.csv")
+    df = pd.read_csv("data/CCLE_expression.csv")
     celline = list(df['Unnamed: 0'])
     df = df.rename(columns={i: i.split(' ')[0] for i in list(df.columns)})
     f3 = df.loc[:, 'TSPAN6':'AC113348.1']
@@ -15,7 +15,7 @@ def extact_gene_name_exp():
     return(f3.columns.tolist(), gene_exp,celline)
 
 def extract_drug_cline_data():
-    df = pd.read_csv("sanger-dose-response.csv")
+    df = pd.read_csv("data/sanger-dose-response.csv")
     
         
     df2 = df[df['DRUG_NAME'].notna()]
@@ -131,5 +131,5 @@ corr_data.columns = ['Drug_name', 'Gene_name', 'correlation_coff', 'P-value']
 corr_data = corr_data[corr_data['correlation_coff'] > 0.1]
 corr_data = corr_data[corr_data['P-value'] < 0.05]
 
-corr_data.to_csv("gene_drug_correlation_coff.csv", index=False)
+corr_data.to_csv("data/gene_drug_correlation_coff.csv", index=False)
 print("Correlation Coff matrix is saved...")
