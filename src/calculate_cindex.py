@@ -1,3 +1,4 @@
+# Script to calculate correlation of gene expression and drug response in patients using C-index
 import pandas as pd
 from sksurv.metrics import concordance_index_censored
 
