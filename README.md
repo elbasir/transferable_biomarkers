@@ -1,6 +1,6 @@
 # transferable_biomarkers
 
-This is a repo for the transferable biomarkers from cell lines to patients
+This is a repo for the transferable biomarkers from cell lines to patients which are associated with better drug response
 
 #### Large files to download
 1- download "proae.hdf5" from https://drive.google.com/file/d/1BuHTzLuq8dhd90ETQGEkbd7zh1uamIty/view?usp=sharing to "model" folder.
