@@ -131,5 +131,5 @@ corr_data.columns = ['Drug_name', 'Gene_name', 'correlation_coff', 'P-value']
 corr_data = corr_data[corr_data['correlation_coff'] > 0.1]
 corr_data = corr_data[corr_data['P-value'] < 0.05]
 
-corr_data.to_csv("gene_drug_correlation_coff.csv", index=False)
+corr_data.to_csv("output/gene_drug_correlation_coff.csv", index=False)
 print("Drug Gene Correlation Coff table is saved...")
