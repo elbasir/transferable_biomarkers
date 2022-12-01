@@ -13,4 +13,9 @@ This is a repo for the transferable biomarkers from cell lines to patients which
 
 5- download "tcga_norm_count_2.csv" from https://drive.google.com/file/d/1b0NnPwWgG2gdH7Vb4n4SeTNLUcnRCB_X/view?usp=sharing to "data" folder.
 
-6- download "gene_drug_full_dataset.csv" from https://drive.google.com/file/d/1rQ78s9aRSHGZoXA5hM3TxNBD0DLdG-ga/view?usp=sharing to "model" folder.
+#### Train and Evaluate Classifiers
+
+1- Full data set to train model "gene_drug_full_dataset.csv" can be downloaded from https://drive.google.com/file/d/1rQ78s9aRSHGZoXA5hM3TxNBD0DLdG-ga/view?usp=sharing and save it in "model" folder
+
+2- Run train.py in folder "model" to train and evaluate the performance of both classifiers Random Forest and XGBoost
+
