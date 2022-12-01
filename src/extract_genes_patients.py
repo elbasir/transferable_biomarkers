@@ -84,4 +84,4 @@ tcga_dataframe = tcga_dataframe.T
 tcga_dataframe.columns = tcga_dataframe.iloc[0].tolist()
 tcga_dataframe = tcga_dataframe.iloc[1:]
 tcga_dataframe = tcga_dataframe.rename(columns={'Unnamed: 0': 'pa_drug'})
-tcga_dataframe.to_csv("full_clean_TCGA.csv", index=False)
+tcga_dataframe.to_csv("output/full_clean_TCGA.csv", index=False)
