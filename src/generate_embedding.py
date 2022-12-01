@@ -61,7 +61,7 @@ def generate_embedding(encdoded, lv_layer):
     embedding_df = pd.DataFrame(emb)
     
     # Saving human genes embedding
-    embedding_df.to_csv("data/Embedding_human_proteins.csv", index=False)
+    embedding_df.to_csv("output/Embedding_human_proteins.csv", index=False)
 
 
 
