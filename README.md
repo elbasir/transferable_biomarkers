@@ -12,3 +12,5 @@ This is a repo for the transferable biomarkers from cell lines to patients
 4- download "tcga_norm_count_1.csv" from https://drive.google.com/file/d/1ymY78HIQXz-RbqJUFVTA1x5g7o2ZhYNa/view?usp=sharing to "data" folder.
 
 5- download "tcga_norm_count_2.csv" from https://drive.google.com/file/d/1b0NnPwWgG2gdH7Vb4n4SeTNLUcnRCB_X/view?usp=sharing to "data" folder.
+
+6- download "gene_drug_full_dataset.csv" from https://drive.google.com/file/d/1rQ78s9aRSHGZoXA5hM3TxNBD0DLdG-ga/view?usp=sharing to "model" folder.
