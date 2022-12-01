@@ -2,7 +2,7 @@ import pandas as pd
 from sksurv.metrics import concordance_index_censored
 
 def get_data(gene, drug_col):
-    df = pd.read_csv("data/full_clean_TCGA.csv", usecols=[drug_col, gene])
+    df = pd.read_csv("full_clean_TCGA.csv", usecols=[drug_col, gene])
     df = df.dropna()
     cindex = []
     drugs = df['pa_drug'].tolist()
@@ -55,7 +55,7 @@ def calculate_cindex(data, drug, gene):
         retun(['NaN', 'NaN', 'NaN'])
 
 
-for ch in pd.read_csv("data/full_clean_TCGA.csv", chunksize=1):
+for ch in pd.read_csv("full_clean_TCGA.csv", chunksize=1):
     break
     
 genecols = ch.columns[1:]
@@ -71,4 +71,4 @@ for gene in genecols:
 df = pd.DataFrame(cindex)
 df.columns = ['Gene_name', 'Drug_name', 'CI']
 #df.to_csv("CI_gene_drug_May_13.csv", index=False)
-df.to_csv("output/gene_drug_CIndex.csv", index=False)
+df.to_csv("gene_drug_CIndex.csv", index=False)
