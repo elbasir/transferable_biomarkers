@@ -66,7 +66,7 @@ def generate_embedding(encdoded, lv_layer):
 
 
 # Loading all human genes names and sequences
-proteins = pd.read_csv("gene_names_with_sequences.csv")
+proteins = pd.read_csv("data/gene_names_with_sequences.csv")
 gene_names = proteins['Gene_name'].tolist()
 protein_sequences = proteins['Protein_sequence'].tolist()
 
