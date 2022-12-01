@@ -1,3 +1,4 @@
+# script to extract genes correlate with drug response in cell lines
 import numpy as np
 import pandas as pd
 from scipy.stats import pearsonr, spearmanr
