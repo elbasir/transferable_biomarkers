@@ -7,7 +7,7 @@ np.random.seed(423)
 def extact_gene_name_exp():
     
     '''extracts the gene expression Cell lines'''
-    ccle_df = pd.read_csv("CCLE_expression.csv")
+    ccle_df = pd.read_csv("data/CCLE_expression.csv")
     celline = list(ccle_df['Unnamed: 0'])
     ccle_df = ccle_df.rename(columns={i: i.split(' ')[0] for i in list(ccle_df.columns)})
     tmp_df = ccle_df.loc[:, 'TSPAN6':'AC113348.1']
@@ -19,7 +19,7 @@ def extract_drug_cline_data():
     
     '''extracts drugs in cell lines with their IC50 values'''
     
-    drug_df = pd.read_csv("sanger-dose-response.csv")
+    drug_df = pd.read_csv("data/sanger-dose-response.csv")
     drug_df = drug_df[drug_df['DRUG_NAME'].notna()]
     drug_df = drug_df[drug_df['IC50_PUBLISHED'].notna()]
     ic50_published = drug_df['IC50_PUBLISHED'].tolist()
