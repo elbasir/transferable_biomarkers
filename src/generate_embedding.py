@@ -66,7 +66,7 @@ def generate_embedding(encdoded, lv_layer):
 
 
 # Loading all human genes names and sequences
-proteins = pd.read_csv("gene_names_with_sequences.csv")
+proteins = pd.read_csv("data/gene_names_with_sequences.csv")
 gene_names = proteins['Gene_name'].tolist()
 protein_sequences = proteins['Protein_sequence'].tolist()
 
@@ -82,7 +82,7 @@ for i in range(len(protein_sequences)):
         encoded.append(encode_seq(str(protein_sequences[i][:2000])))
 
 ## Load the trained autoencoder ###
-autoencoder = tf.keras.models.load_model('proae.hdf5')
+autoencoder = tf.keras.models.load_model('model/proae.hdf5')
 
 encoded = np.array(encoded)
 
