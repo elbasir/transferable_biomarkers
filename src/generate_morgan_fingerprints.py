@@ -26,4 +26,4 @@ def generate_mfp(drugs, smiles):
 
 
 morgan_fp = generate_mfp(drug_name, smiles)
-morgan_fp.to_csv("drug_MFPs.csv", index=False)
+morgan_fp.to_csv("data/drug_MFPs.csv", index=False)
