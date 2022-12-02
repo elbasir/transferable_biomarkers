@@ -17,15 +17,21 @@ This is a repo for the transferable biomarkers from cell lines to patients which
 
 #### Extract genes from cell lines correlate with drug response
 
-Run ```python src/extract_genes_cell_lines.py```
+To extract genes correlate with drug response in cell lines, run the following command
+
+```python src/extract_genes_cell_lines.py```
 
 #### Extract Genes from Patients which correlate with drug response by calculating C-Index
 
-Run ```python src/calculate_cindex.py```
+Genes that are correlated with drug response in cell lines, are then checked in TCGA, the following command extract genes that also are correlated with drug response in patients
+
+```python src/calculate_cindex.py```
 
 #### Generate gene embedding using trained covolutional autoencoder
 
-Run ```python src/generate_embedding.py```
+In order to extract/generate gene embedding using its sequence, run the following command
+
+```python src/generate_embedding.py```
 
 #### Train and Evaluate Classifiers
 
