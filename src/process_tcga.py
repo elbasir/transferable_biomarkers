@@ -3,13 +3,13 @@ import pandas as pd
 
 def process_survival_data():
 
-    df = pd.read_csv("Survival_SupplementalTable_S1_20171025_xena_sp", on_bad_lines='skip', sep='\t')
+    df = pd.read_csv("data/Survival_SupplementalTable_S1_20171025_xena_sp", on_bad_lines='skip', sep='\t')
     sample = df['sample'].tolist()
     patient = df['_PATIENT'].tolist()
     os_time = df['OS.time'].tolist()
     os = df['OS'].tolist()
     del df
-    drug_dataframe = pd.read_csv("drug_tcga.csv")
+    drug_dataframe = pd.read_csv("data/drug_tcga.csv")
     drug_name = drug_dataframe['drug_name'].tolist()
     bcr = drug_dataframe['bcr_patient_barcode'].tolist()
     survival_data = []
@@ -38,7 +38,7 @@ def process_survival_data():
 
 def get_exp_tcga(filename, pcode, patient, drug_name, os_time, os):
    
-    df = pd.read_csv(filename)
+    df = pd.read_csv("data/"+filename)
     genes = df['sample'].tolist()
     cols = df.columns.tolist()
     tcga_dataframe = pd.DataFrame(index=range(len(genes)),columns=range(len(pcode)))
@@ -85,4 +85,4 @@ tcga_dataframe = tcga_dataframe.T
 tcga_dataframe.columns = tcga_dataframe.iloc[0].tolist()
 tcga_dataframe = tcga_dataframe.iloc[1:]
 tcga_dataframe = tcga_dataframe.rename(columns={'Unnamed: 0': 'pa_drug'})
-tcga_dataframe.to_csv("full_clean_TCGA.csv", index=False)
+tcga_dataframe.to_csv("data/full_clean_TCGA.csv", index=False)
