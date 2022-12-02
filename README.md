@@ -13,6 +13,20 @@ This is a repo for the transferable biomarkers from cell lines to patients which
 
 5- download "tcga_norm_count_2.csv" https://drive.google.com/file/d/1b0NnPwWgG2gdH7Vb4n4SeTNLUcnRCB_X/view?usp=sharing to "data" folder.
 
+
+
+#### Extract genes from cell lines correlate with drug response
+
+Run ```python src/extract_genes_cell_lines.py```
+
+#### Extract Genes from Patients which correlate with drug response by calculating C-Index
+
+Run ```python src/calculate_cindex.py```
+
+#### Generate gene embedding using trained covolutional autoencoder
+
+Run ```python src/generate_embedding.py```
+
 #### Train and Evaluate Classifiers
 
 1- Download full data set to train model "gene_drug_full_dataset.csv" https://drive.google.com/file/d/1rQ78s9aRSHGZoXA5hM3TxNBD0DLdG-ga/view?usp=sharing and save it in "model" folder
