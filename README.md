@@ -17,5 +17,5 @@ This is a repo for the transferable biomarkers from cell lines to patients which
 
 1- Download full data set to train model "gene_drug_full_dataset.csv" https://drive.google.com/file/d/1rQ78s9aRSHGZoXA5hM3TxNBD0DLdG-ga/view?usp=sharing and save it in "model" folder
 
-2- Run train.py in folder "model" to train and evaluate the performance of both classifiers Random Forest and XGBoost
+2- Run ```python model/train.py``` to train and evaluate the performance of both classifiers Random Forest and XGBoost
 
