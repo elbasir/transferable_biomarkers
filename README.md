@@ -2,7 +2,7 @@
 
 This is a repo for the transferable biomarkers from cell lines to patients which are associated with drug response
 
-## Systems Requirements and Packages
+## System Requirements and Packages
 * Operating Systems Linux (CentOS version 7 and Ubuntu 20.04 LTS)
 * Python versions >=3.6
 * Pandas versions >=1.3.5
