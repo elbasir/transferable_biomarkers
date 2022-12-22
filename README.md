@@ -2,8 +2,14 @@
 
 This is a repo for the transferable biomarkers from cell lines to patients which are associated with drug response
 
+## Systems Requirements and Packages
 * Operating Systems Linux (CentOS version 7 and Ubuntu 20.04 LTS)
 * Python versions >=3.6
+* Pandas versions >=1.3.5
+* Numpy versions >=1.21.5
+* Scikit learn >=0.24.2
+* XGBoost versions >=1.5.0
+* Scipy versions >=1.7.3
 
 ## Large files to download
 1- download "proae.hdf5" https://drive.google.com/file/d/1BuHTzLuq8dhd90ETQGEkbd7zh1uamIty/view?usp=sharing to "model" folder.
