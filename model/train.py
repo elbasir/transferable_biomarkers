@@ -1,55 +1,34 @@
-# Script to train and evaluate Random Forest and XGBoost
-
 import pandas as pd
+import random
 import numpy as np
 from sklearn.utils import shuffle
-import sklearn.metrics as metrics
-from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, roc_auc_score
+from sklearn.metrics import confusion_matrix precision_score, recall_score, f1_score, accuracy_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 import xgboost as xgb
 from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 
-final_data = pd.read_csv("gene_drug_full_dataset.csv")
-tmp_data = final_data.values.tolist()
-
-X_data = []
-y_data = []
-for i in range(len(tmp_data)):
-    tmp1 = tmp_data[i][3:3+1024]
-    tmp2 = tmp_data[i][-65:-1]
-    X_data.append(np.concatenate([tmp1, tmp2]))
-    #X_train.append(tmp_data[i][2307:-1])
-    y_data.append(tmp_data[i][-1])
+train_data = pd.read_csv("full_train_data.csv")
+X_train = []
+y_train = []
+for i in range(len(train_data)):
+    X_train.append(train_data.iloc[i][2:-1].tolist())
+    y_train.append(train_data.iloc[i][-1])
     
-gene = final_data['Gene_name'].tolist()
-drug = final_data['Drug_name'].tolist()
+test_data = pd.read_csv("full_test_data.csv")
 
-
-filtered_genes = []
-filtered_drugs = []
-features = []
-labels = []
-
-for i in range(len(drug)):
+X_test = []
+y_test = []
+for i in range(len(test_data)):
+    X_test.append(test_data.iloc[i][2:-1].tolist())
+    y_test.append(test_data.iloc[i][-1])
     
-    # Excluding hormone therapy drugs
-    if(drug[i] != 'BICALUTAMIDE' and drug[i]!='TAMOXIFEN'):
-        features.append(X_data[i])
-        labels.append(y_data[i])
-        filtered_drugs.append(drug[i])
-        filtered_genes.append(gene[i])
-        
-X_train, X_test, y_train, y_test, drug_train, drug_test, gene_train, gene_test = train_test_split(features, labels,
-                                                                                filtered_drugs, filtered_genes, test_size=0.15, random_state=17, stratify=filtered_drugs)
-
-
 X_train = np.array(X_train)
-X_test = np.array(X_test)
 y_train = np.array(y_train)
+X_test = np.array(X_test)
 y_test = np.array(y_test)
 
-### Random Forest Model
+### Random Forest Classifier###
 n_estimators = 40
 max_depth = 3
 #np.random.seed(42)
@@ -66,7 +45,7 @@ tn, fp, fn, tp = confusion_matrix(y_test, pred).ravel()
 specific = tn / (tn+fp)
 f1 = f1_score(y_test, pred)
 
-print("Random Forest performance...")
+
 print("Accuracy: %.2f%%" % (acc * 100.0))
 print("AUC: %.2f%%" % (auc *100.0))
 print("Recall: %.2f%%" % (recall*100.0))
@@ -74,7 +53,7 @@ print("Precision: %.2f%%" % (precision*100.0))
 print("Specificity: %.2f%%" % (specific*100.0))
 print("F1: %.2f%%" % (f1*100.0))
 
-# XGBoost model with best hyper parameters
+### XGBoost Classifier###
 
 params = {
 'max_depth':9,
@@ -97,7 +76,7 @@ tn, fp, fn, tp = confusion_matrix(y_test, pred).ravel()
 specific = tn / (tn+fp)
 f1 = f1_score(y_test, pred)
 
-print("XGBoost performance...")
+
 print("Accuracy: %.2f%%" % (acc * 100.0))
 print("AUC: %.2f%%" % (auc *100.0))
 print("Recall: %.2f%%" % (recall*100.0))
