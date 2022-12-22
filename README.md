@@ -35,7 +35,9 @@ In order to extract/generate gene embedding using its sequence, run the followin
 
 ## Train and Evaluate Classifiers
 
-1- Download full data set to train model "gene_drug_full_dataset.csv" https://drive.google.com/file/d/1rQ78s9aRSHGZoXA5hM3TxNBD0DLdG-ga/view?usp=sharing and save it in "model" folder
+1- Download the training data set "full_train_data.csv" to train model https://drive.google.com/file/d/1SsWGrc_RrBeeiRrtz4bUFiAtxNrjPWB9/view?usp=sharing and save it in "model" folder
 
-2- Run ```python model/train.py``` to train and evaluate the performance of both classifiers Random Forest and XGBoost
+2- Download the test data set "full_test_data.csv" to evaluate classifiers https://drive.google.com/file/d/1baXAcZHQ2-EFbDNm-2-66HGUUagu0hFw/view?usp=sharing and save it in "model" folder
+
+3- Run ```python model/train.py``` to train and evaluate the performance of both classifiers Random Forest and XGBoost
 
